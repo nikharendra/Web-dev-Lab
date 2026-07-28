@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        header{
+            color: black;
+            background-color: #cef4d8;
+            display: flex;
+            justify-content: space-between;
+            text-decoration: none;
+            height: 80px;
+        }
+        header a{
+            font-size: 20px;
+        }
+        header a img{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+        ul{
+            display: flex;
+            justify-content: space-around;
+            
+            list-style: none;
+        } 
+        li{
+            display: inline-block;
+            font-size: 20px;
+            padding: 0 15px;
+            color: black;
+        }
+         a:hover{
+            color: red;
+        }
+        a{
+            text-decoration: none;
+        }
+        /* ..... */
+        h1{
+            text-align: center;
+        }
+        /* main section  */
+        .container{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+        .left{
+            flex: 1;
+            background-color: rgb(252, 251, 251);
+            margin: 5px 5px 5px;
+        }
+        .center{
+            flex: 1;
+            background-color: rgb(253, 251, 251);
+             margin: 5px 5px 5px;
+        }
+        .right{
+            flex: 1;
+            background-color: rgb(252, 253, 253);
+             margin: 5px 5px 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/"><img src="profile.jpeg" alt=""> Harendra Singh Yadav</a>
+        
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Projects</a></li>
+            <li><a href="">Articals</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        
+       
+    </header>
+     <h1>Frontend Devloper</h1>
+    <main class="container">
+        
+        <section class="left">
+            <h1>Projects</h1>
+            <h2>HTML only portfolio</h2>
+            <hr>
+            <h2>Calculator</h2>
+            <hr>
+            <h2>Quiz App</h2>
+            <hr>
+            <h2>Counter App</h2>
+            <hr>
+            <h2>Upcomming Products</h2>
+
+        </section>
+        <hr>
+        <section class="center">
+            <h1>Work Experience</h1>
+            <hr>
+            <p>roadmap.sh <br> solve all the frontend project <br> <a href="/">visit my profile</a> </p>
+            <hr>
+            <p>
+                <h4>Open Source Work</h4>
+                <p>Contributed 50 open source projects. Made my own project with 200 GitHub stars. <br> <a href="/">visit my profile</a></p>
+            </p>
+        </section>
+        <hr>
+        <section class="right">
+            <h1>Education</h1>
+            <p>Graduated with 8.00 cgpa out of 10 . <br> corse I took : <br> -Object Oriented Programming. <br> -Data structured and algorithms. <br> -Artificial Inteligence. <br> -Database Management Systems.  </p>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <h1>Reviews from my teachers</h1>
+            <div class="card">
+                <p></p>
+            </div>
+
+        </div>
+        <p>@ allright reserved 2026</p>
+    </footer>
+</body>
+</html>
