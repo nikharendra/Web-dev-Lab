@@ -233,9 +233,16 @@ function showStartScreen() {
 
     document.getElementById('start-btn').addEventListener('click', startQuiz);
 }
-
+// suffel question after restart 
+function shuffleQuestions() {
+    for (let i = quizQuestions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [quizQuestions[i], quizQuestions[j]] = [quizQuestions[j], quizQuestions[i]];
+    }
+}
 // Start the quiz
 function startQuiz() {
+    shuffleQuestions();  
     score = 0;
     currentQuestionIndex = 0;
     userAnswers = Array(quizQuestions.length).fill(null);

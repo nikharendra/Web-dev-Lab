@@ -3,20 +3,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const products = [
     { 
         id: 1, 
-        name: "product 1", 
-        image: "image/photo_1.jpeg", 
+        name: "New Brand Shoe", 
+        image: "image/new-shoe.jpg", 
         price: 29.99 
     },
     {
       id: 2,
-      name: "product 2",
-      image: "image/photo_2.jpeg",
+      name: "New Design t-shirt",
+      image: "image/new-t-shirt.jpg",
       price: 19.99,
     },
     {
       id: 3,
-      name: "product 3",
-      image: "image/photo_3.jpeg",
+      name: "wireless mouse",
+      image: "image/wireless-mouse.jpg",
       price: 59.999,
     },
   ];
