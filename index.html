@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Harendra Singh Yadav</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #EDEEF1;
+    --surface: #FFFFFF;
+    --ink: #14161C;
+    --muted: #62656E;
+    --line: #DBDDE3;
+    --accent: #1F6F5C;
+    --accent-soft: #E3EEEA;
+    --display: 'Space Grotesk', system-ui, sans-serif;
+    --body: 'Inter', system-ui, -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --maxw: 1080px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  a{ color: inherit; text-decoration: none; }
+
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection{ background: var(--accent-soft); color: var(--ink); }
+
+  /* ---------------- Header ---------------- */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    padding: 0 clamp(20px, 5vw, 56px);
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+
+  header > a{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  header a img{
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  nav.top ul{
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav.top a{
+    font-size: 14.5px;
+    color: var(--muted);
+    padding: 4px 0;
+    border-bottom: 1px solid transparent;
+    transition: color .15s ease, border-color .15s ease;
+  }
+
+  nav.top a:hover{
+    color: var(--ink);
+    border-color: var(--accent);
+  }
+
+  /* ---------------- Hero ---------------- */
+  .hero{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: clamp(48px, 8vw, 84px) clamp(20px, 5vw, 56px) clamp(32px, 6vw, 56px);
+  }
+
+  .hero .eyebrow{
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: .04em;
+    margin: 0 0 12px;
+  }
+
+  .hero h1{
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(34px, 5.5vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  .hero h1 span{
+    color: var(--accent);
+  }
+
+  /* ---------------- Layout: index rail + content ---------------- */
+  .layout{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 48px;
+    padding: 0 clamp(20px, 5vw, 56px) 100px;
+  }
+
+  .index{
+    position: sticky;
+    top: 100px;
+    align-self: start;
+    height: fit-content;
+  }
+
+  .index ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 2px solid var(--line);
+  }
+
+  .index li{ margin: 0; }
+
+  .index a{
+    display: block;
+    padding: 8px 0 8px 16px;
+    margin-left: -2px;
+    border-left: 2px solid transparent;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+    transition: color .2s ease, border-color .2s ease;
+  }
+
+  .index a .num{
+    color: var(--muted);
+    margin-right: 8px;
+  }
+
+  .index a:hover{ color: var(--ink); }
+
+  .index a.active{
+    color: var(--ink);
+    border-left-color: var(--accent);
+  }
+
+  .index a.active .num{ color: var(--accent); }
+
+  /* ---------------- Sections ---------------- */
+  .sections{ min-width: 0; }
+
+  section.block{
+    padding: 40px 0;
+    border-top: 1px solid var(--line);
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+
+  section.block:first-child{ border-top: none; padding-top: 0; }
+
+  section.block.is-visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    section.block{ transition: none; opacity: 1; transform: none; }
+    html{ scroll-behavior: auto; }
+  }
+
+  section.block h2{
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 24px;
+  }
+
+  /* Projects list */
+  ul.projects{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul.projects li{
+    border-bottom: 1px solid var(--line);
+  }
+
+  ul.projects li:last-child{ border-bottom: none; }
+
+  ul.projects a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 4px;
+    font-size: 16.5px;
+    font-weight: 500;
+    color: var(--ink);
+    transition: padding-left .2s ease, color .2s ease;
+  }
+
+  ul.projects a::after{
+    content: "→";
+    color: var(--muted);
+    font-size: 15px;
+    transition: transform .2s ease, color .2s ease;
+  }
+
+  ul.projects a:hover{
+    padding-left: 10px;
+    color: var(--accent);
+  }
+
+  ul.projects a:hover::after{
+    transform: translateX(3px);
+    color: var(--accent);
+  }
+
+  ul.projects li.upcoming a{
+    color: var(--muted);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  ul.projects li.upcoming a::after{ content: ""; }
+
+  /* Experience entries */
+  .entry{ margin-bottom: 28px; }
+  .entry:last-child{ margin-bottom: 0; }
+
+  .entry h3{
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0 0 4px;
+  }
+
+  .entry p{
+    margin: 0 0 8px;
+    color: var(--muted);
+  }
+
+  .entry a.link{
+    font-size: 14px;
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px;
+  }
+
+  /* Education */
+  .cgpa{
+    font-family: var(--mono);
+    font-size: 13.5px;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+
+  section.block p.lead{ margin: 0 0 14px; color: var(--muted); }
+
+  ul.courses{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 8px 24px;
+  }
+
+  ul.courses li{
+    font-size: 15px;
+    padding-left: 14px;
+    position: relative;
+  }
+
+  ul.courses li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  /* ---------------- Footer ---------------- */
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 48px clamp(20px, 5vw, 56px) 40px;
+  }
+
+  footer .inner{
+    max-width: var(--maxw);
+    margin: 0 auto;
+  }
+
+  footer h2{
+    font-family: var(--display);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--muted);
+    margin: 0 0 16px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+
+  .review-slot{
+    border: 1px dashed var(--line);
+    border-radius: 6px;
+    padding: 24px;
+    max-width: 420px;
+  }
+
+  footer .copyright{
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* ---------------- Responsive ---------------- */
+  @media (max-width: 760px){
+    .layout{
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .index{
+      position: static;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+    .index ol{
+      display: flex;
+      gap: 4px;
+      border-left: none;
+    }
+    .index a{
+      border-left: none;
+      border-bottom: 2px solid transparent;
+      padding: 6px 10px;
+    }
+    .index a.active{ border-bottom-color: var(--accent); }
+    ul.courses{ grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 560px){
+    nav.top ul{ gap: 16px; }
+    nav.top a{ font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+    <header>
+        <a href="#"><img src="profile.jpg" alt=""> Harendra Singh Yadav</a>
+        <nav class="top">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <p class="eyebrow">portfolio</p>
+        <h1>Frontend <span>Devloper</span></h1>
+    </section>
+
+    <div class="layout">
+        <nav class="index">
+            <ol>
+                <li><a href="#projects" class="active"><span class="num">01</span>Projects</a></li>
+                <li><a href="#experience"><span class="num">02</span>Experience</a></li>
+                <li><a href="#education"><span class="num">03</span>Education</a></li>
+            </ol>
+        </nav>
+
+        <div class="sections">
+
+            <section class="block" id="projects">
+                <h2>Projects</h2>
+                <ul class="projects">
+                    <li><a href="./assignment-1/">HTML only portfolio</a></li>
+                    <li><a href="./assignment-2/">Products Cart</a></li>
+                    <li><a href="./assignment-3/">Quiz App</a></li>
+                    <li><a href="./assignment-4/">Scientific Calculator</a></li>
+                    <li class="upcoming"><a href="#">Upcomming Products</a></li>
+                </ul>
+            </section>
+
+            <section class="block" id="experience">
+                <h2>Work Experience</h2>
+
+                <div class="entry">
+                    <h3>roadmap.sh</h3>
+                    <p>solve all the frontend project and currently working on backend</p>
+                    <a class="link" href="#">visit my profile</a>
+                </div>
+
+                <!-- <div class="entry">
+                    <h3>Resume</h3>
+                    <p>HTML only web. </p>
+                    <a class="link" href="#">visit my Resume</a>
+                </div> -->
+            </section>
+
+            <section class="block" id="education">
+                <h2>Education</h2>
+                <p class="cgpa">CGPA — 8.00 / 10</p>
+                <p class="lead">Graduated with 8.00 cgpa out of 10. Course I took :</p>
+                <ul class="courses">
+                    <li>Object Oriented Programming</li>
+                    <li>Data Structured and Algorithms</li>
+                    <li>Artificial Inteligence</li>
+                    <li>Database Management Systems</li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="inner">
+            <h2>Reviews from my teachers</h2>
+            <div class="review-slot">
+                <p></p>
+            </div>
+            <p class="copyright">@ allright reserved 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll-reveal for each content block
+        var blocks = document.querySelectorAll('section.block');
+        var indexLinks = document.querySelectorAll('.index a');
+        var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if ('IntersectionObserver' in window){
+            var revealObserver = new IntersectionObserver(function(entries){
+                entries.forEach(function(entry){
+                    if(entry.isIntersecting){
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            blocks.forEach(function(block){
+                if(prefersReduced){ block.classList.add('is-visible'); }
+                else{ revealObserver.observe(block); }
+            });
+
+            var spyObserver = new IntersectionObserver(function(entries){
+                entries.forEach(function(entry){
+                    var link = document.querySelector('.index a[href="#' + entry.target.id + '"]');
+                    if(!link) return;
+                    if(entry.isIntersecting){
+                        indexLinks.forEach(function(a){ a.classList.remove('active'); });
+                        link.classList.add('active');
+                    }
+                });
+            }, { rootMargin: '-40% 0px -50% 0px' });
+
+            blocks.forEach(function(block){ spyObserver.observe(block); });
+        } else {
+            blocks.forEach(function(block){ block.classList.add('is-visible'); });
+        }
+    </script>
+</body>
+</html>
