@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Departments</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+
+        <div class="logo">
+            DepartmentMS
+        </div>
+
+        <div class="nav-links">
+
+            <a href="departments.html">
+                Departments
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="#" id="logoutBtn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard">
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <h1>
+                    Departments
+                </h1>
+
+                <p>
+                    Manage organization departments
+                </p>
+
+            </div>
+
+
+            <button
+                id="addDepartmentBtn"
+                class="btn primary-btn"
+            >
+                + Add Department
+            </button>
+
+        </div>
+
+
+        <!-- Department Form -->
+
+        <div
+            id="departmentFormContainer"
+            class="form-container hidden"
+        >
+
+            <h2 id="formTitle">
+                Add Department
+            </h2>
+
+
+            <form id="departmentForm">
+
+                <input
+                    type="hidden"
+                    id="departmentId"
+                >
+
+
+                <div class="form-group">
+
+                    <label>
+                        Department Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="departmentName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Description
+                    </label>
+
+                    <textarea
+                        id="departmentDescription"
+                        rows="4"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Department Head
+                    </label>
+
+                    <input
+                        type="text"
+                        id="departmentHead"
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn primary-btn"
+                >
+                    Save Department
+                </button>
+
+
+                <button
+                    type="button"
+                    id="cancelBtn"
+                    class="btn cancel-btn"
+                >
+                    Cancel
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <p id="message"></p>
+
+
+        <!-- Departments -->
+
+        <div
+            id="departmentsContainer"
+            class="department-grid"
+        ></div>
+
+    </main>
+
+
+    <script src="js/departments.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register - CompanyMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            CompanyMS
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+        </div>
+
+    </nav>
+
+
+    <div class="form-container">
+
+        <form id="registerForm" class="form-card">
+
+            <h2>Create Account</h2>
+
+            <p class="form-subtitle">
+                Register as an employee
+            </p>
+
+
+            <label for="name">Full Name</label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                required
+            >
+
+
+            <label for="email">Email</label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+
+            <label for="password">Password</label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                required
+            >
+
+
+            <label for="department">Department</label>
+
+            <input
+                type="text"
+                id="department"
+                placeholder="Example: IT"
+            >
+
+
+            <button type="submit" class="btn">
+                Register
+            </button>
+
+
+            <p id="message"></p>
+
+
+            <p class="form-footer">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+
+        </form>
+
+    </div>
+
+
+    <script src="js/register.js"></script>
+
+</body>
+</html>

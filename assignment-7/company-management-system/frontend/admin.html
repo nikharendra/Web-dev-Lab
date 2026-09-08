@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard - CompanyMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            CompanyMS
+        </div>
+
+        <div class="nav-links">
+
+            <a href="admin.html">
+                Dashboard
+            </a>
+
+            <a href="#" id="logoutBtn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard">
+
+        <section class="dashboard-header">
+
+            <h1>
+                Admin Dashboard
+            </h1>
+
+            <p>
+                Welcome,
+                <span id="adminName">Admin</span>
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-card">
+
+            <h2>
+                Employee Details
+            </h2>
+
+            <p>
+                Below are the employees registered in the company.
+            </p>
+
+            <div id="employeeDetails">
+                Loading employee details...
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/admin.js"></script>
+
+</body>
+
+</html>
