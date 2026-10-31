@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Library</title>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Import jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Book Library</h1>
+
+        <p>Search for books and explore their authors.</p>
+
+        <div class="search-area">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Enter a book topic"
+                value="javascript"
+            >
+
+            <button id="loadBooksBtn">
+                Load Books
+            </button>
+
+        </div>
+
+        <!-- Display loading messages and errors -->
+        <p id="message"></p>
+
+        <!-- Display books here -->
+        <section id="bookList" class="book-grid"></section>
+
+    </main>
+
+    <!-- Connect JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
